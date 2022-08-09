@@ -16,35 +16,35 @@
 </head>
 
 <body>
-    <p id="textX"></p>
-    <p id="textY"></p>
+    <br>
+    <main>
+        <div class="container">
+            <br>
+            <h3>teste</h3>
+            <br>
+            <p id="text">
+                <br>
+                <span> teste</span>
+                <br>
+            </p>
 
+            <button>plau</button>
 
+        </div>
+    </main>
 </body>
 <script>
-    let pmx = 0
-    let pmy = 0
-    $(document).mousemove((event) => {
-        pmx = event.pageX
-        pmy = event.pageY
-        $("#textX").text(" Mouse X: " + pmx + "px, Mouse Y: " + pmy + "px")
-        if(pmx > 500 && pmx < 599){
-            alert("passou")
-            $("body").css("background-color", "yellow")
-        }
-        else if(pmx > 600 && pmx < 699){
-            $("body").css("background-color", "orange")
-        }else if(pmx > 700 && pmx < 799){
-            $("body").css("background-color", "red")
-        }else{
-            $("body").css("background-color", "black")
-        }
-        
-           
+    //$('p').parent().css({ 'border': '1px solid #00f' })
+    //$('span').parents().css({ 'border': '1px solid #f00' })
 
+    $('span').parentsUntil('main').css({ 'border': '1px solid #f00' })
 
+    $("button").click(function () {
+        $("p").toggle()
+        $("div").fadeOut();
     })
 
+    
 
 </script>
 

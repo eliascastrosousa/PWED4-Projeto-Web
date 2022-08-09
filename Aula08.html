@@ -16,35 +16,32 @@
 </head>
 
 <body>
-    <p id="textX"></p>
-    <p id="textY"></p>
+    <div class="container">
+
+        <h1 id="h1">teste</h1>
+        <h2>teste</h2>
+        <h3>teste</h3>
+        <h4>teste</h4>
+        <h5>teste</h5>
 
 
+        <p id="res"></p>
+    </div>
 </body>
 <script>
-    let pmx = 0
-    let pmy = 0
-    $(document).mousemove((event) => {
-        pmx = event.pageX
-        pmy = event.pageY
-        $("#textX").text(" Mouse X: " + pmx + "px, Mouse Y: " + pmy + "px")
-        if(pmx > 500 && pmx < 599){
-            alert("passou")
-            $("body").css("background-color", "yellow")
-        }
-        else if(pmx > 600 && pmx < 699){
-            $("body").css("background-color", "orange")
-        }else if(pmx > 700 && pmx < 799){
-            $("body").css("background-color", "red")
-        }else{
-            $("body").css("background-color", "black")
-        }
-        
-           
+    
 
-
+    $(document).on({
+        click:()=>{
+            $('#res').text(event.type + ": " + event.which)
+        },
+        keydown:()=>{
+            $('#res').text(event.type + ": " + event.which)        
+            if(event.which == 13){
+                alert("Tecla ENTER pressionada")
+            }
+        }
     })
-
 
 </script>
 
